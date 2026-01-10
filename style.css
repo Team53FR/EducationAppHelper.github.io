@@ -1,85 +1,180 @@
-.section 
-{
-    margin-top: 40px;
-    text-align: left;
+/* =====================
+   VARIABLES
+===================== */
+:root {
+    --primary: #4f8cff;
+    --primary-dark: #3a6fd8;
+    --secondary: #2c3e50;
+    --background: #f5f7fb;
+    --card-bg: #ffffff;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.section h2 
-{
-    color: #2c3e50;
-    margin-bottom: 15px;
+/* =====================
+   BASE
+===================== */
+* {
+    box-sizing: border-box;
 }
 
-.features 
-{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.feature 
-{
-    background: #f4f7f9;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-body 
-{
-    font-family: Arial, Helvetica, sans-serif;
+body {
     margin: 0;
-    padding: 0;
-    background-color: #f4f7f9;
-    color: #333;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #eef2ff, var(--background));
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+    background: linear-gradient(135deg, var(--secondary), #1e2a38);
+    color: white;
+    padding: 60px 20px 40px;
     text-align: center;
 }
 
-header 
-{
-    background-color: #2c3e50;
-    color: white;
-    padding: 40px 20px;
-}
-
-header h1 
-{
+header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.5px;
 }
 
-.container 
-{
-    max-width: 800px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-
-.container a.button 
-{
-    display: inline-block;
+header nav {
     margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    color: white;
-    background-color: #3498db;
-    border-radius: 6px;
+}
+
+header nav a {
+    color: rgba(255,255,255,0.9);
+    margin: 0 12px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    position: relative;
 }
 
-.container a.button:hover 
-{
-    background-color: #2980b9;
+header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
 }
 
-footer 
-{
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #666;
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+    max-width: 900px;
+    margin: -40px auto 60px;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+    margin-top: 50px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.section p,
+.section li {
+    color: var(--text-muted);
+}
+
+/* =====================
+   FEATURES / CARDS
+===================== */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature h3 {
+    margin-top: 0;
+    color: var(--secondary);
+}
+
+.feature p {
+    color: var(--text-muted);
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+/* =====================
+   BUTTON
+===================== */
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 34px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(79,140,255,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(79,140,255,0.45);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
     text-align: center;
-    padding-bottom: 30px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 30px 15px 50px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 25px;
+        margin: -30px 15px 40px;
+    }
 }
