@@ -292,4 +292,11 @@ footer {
     font-size: 1.17em;
     font-weight: bold;
     line-height: 1.3;
+
+    /* Empêche la sélection du texte */
+    user-select: none;         /* Standard moderne */
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer / Edge Legacy */
+    -webkit-touch-callout: none; /* iOS Safari */
 }
