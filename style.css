@@ -284,3 +284,12 @@ footer {
     color: #3f9e22;
     font-style: italic;
 }
+
+.release-card summary {
+    cursor: pointer;
+    padding: 6px 0;
+    color: #2c3e50;
+    font-size: 1.17em;
+    font-weight: bold;
+    line-height: 1.3;
+}
